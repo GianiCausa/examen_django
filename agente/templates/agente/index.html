@@ -1,0 +1,67 @@
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpPets</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <script>
+        // Función para mostrar u ocultar la imagen QR
+        function toggleQRCode() {
+            const qrImage = document.getElementById("qr-image");
+            qrImage.style.display = (qrImage.style.display === "none" || qrImage.style.display === "") ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>HelpPets</h1>
+        <h2>Aplicación mobile sobre adopción de animales.</h2>
+        <img src="{% static 'assets/img/Helppet.png' %}" alt="Quienes somos">
+    </header>
+    
+    <!-- Logo en la esquina superior derecha -->
+    <img id="logo" src="{% static 'assets/img/icon.png' %}" alt="Logo de Helppets">
+
+    <section>
+        <h2>Objetivo de la aplicación</h2>
+        <img src="{% static 'assets/img/objetivos.png' %}" alt="Objetivos Helppet">
+    </section>
+
+    <section>
+        <h2>información Adicional</h2>
+        <img src="{% static 'assets/img/infoadicional.png' %}" alt="información adicional">
+    </section>
+
+    <section>
+        <h2>Características Principales</h2>
+        <img src="{% static 'assets/img/Características Principales.png' %}" alt="Características Principales De Helppet">
+    </section>
+
+    <section>
+        <h2>Enlaces de descarga</h2>
+        <ul>
+            {% if device_type == 'Móvil' %}
+            <!-- Mostrar solo el enlace en móvil -->
+            <li>
+                <a href="https://github.com/AntonellaVal/app-HelpPets.git" target="_blank">Ir al GitHub</a>
+            </li>
+            {% else %}
+            <!-- Enlace para mostrar el QR -->
+            <li>
+                <button onclick="toggleQRCode()">Qr de descarga</button>
+            </li>
+            <!-- Imagen QR oculta inicialmente -->
+            <li>
+                <img id="qr-image" src="{% static 'assets/img/qr_helppet.png' %}" alt="QR de descarga" width="150" height="150" style="display: none;">
+            </li>
+            {% endif %}
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HelpPets. Todos los derechos reservados.</p>
+        <P> Más información al whatsapp +56 9 3300 8800</P>
+    </footer>
+</body>
+</html>
