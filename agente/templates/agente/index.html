@@ -17,7 +17,7 @@
     <header>
         <h1>HelpPets</h1>
         <h2>Aplicación mobile sobre adopción de animales.</h2>
-        <img src="{% static 'assets/img/Helppet.png' %}" alt="Quienes somos">
+        <img src="{% static 'assets/img/quienessomos.png' %}" alt="Quienes somos">
     </header>
     
     <!-- Logo en la esquina superior derecha -->
@@ -25,7 +25,7 @@
 
     <section>
         <h2>Objetivo de la aplicación</h2>
-        <img src="{% static 'assets/img/objetivos.png' %}" alt="Objetivos Helppet">
+        <img src="{% static 'assets/img/objetivosnow.png' %}" alt="Objetivos Helppet">
     </section>
 
     <section>
@@ -35,7 +35,7 @@
 
     <section>
         <h2>Características Principales</h2>
-        <img src="{% static 'assets/img/Características Principales.png' %}" alt="Características Principales De Helppet">
+        <img src="{% static 'assets/img/caracteristicasnow.png' %}" alt="Características Principales De Helppet">
     </section>
 
     <section>
@@ -44,7 +44,7 @@
             {% if device_type == 'Móvil' %}
             <!-- Mostrar solo el enlace en móvil -->
             <li>
-                <a href="https://github.com/AntonellaVal/app-HelpPets.git" target="_blank">Ir al GitHub</a>
+                <a href="https://github.com/GianiCausa/apk_helppet" target="_blank">Ir al GitHub de la APK</a>
             </li>
             {% else %}
             <!-- Enlace para mostrar el QR -->
@@ -53,7 +53,7 @@
             </li>
             <!-- Imagen QR oculta inicialmente -->
             <li>
-                <img id="qr-image" src="{% static 'assets/img/qr_helppet.png' %}" alt="QR de descarga" width="150" height="150" style="display: none;">
+                <img id="qr-image" src="{% static 'assets/img/qr_de_apk.png' %}" alt="QR de descarga" width="150" height="150" style="display: none;">
             </li>
             {% endif %}
         </ul>
