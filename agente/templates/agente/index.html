@@ -14,50 +14,66 @@
     </script>
 </head>
 <body>
-    <header>
+    <div class="centrado">
         <h1>HelpPets</h1>
-        <h2>Aplicación mobile sobre adopción de animales.</h2>
-        <img src="{% static 'assets/img/quienessomos.png' %}" alt="Quienes somos">
-    </header>
-    
-    <!-- Logo en la esquina superior derecha -->
-    <img id="logo" src="{% static 'assets/img/icon.png' %}" alt="Logo de Helppets">
+        
+        <!-- Logo en la esquina superior derecha -->
+        <img id="logo" src="{% static 'assets/img/icon.png' %}" alt="Logo de Helppets">
 
-    <section>
-        <h2>Objetivo de la aplicación</h2>
-        <img src="{% static 'assets/img/objetivosnow.png' %}" alt="Objetivos Helppet">
-    </section>
+        <section class="img-centrado">
+            <h2>Quienes Somos</h2>
+            <img src="{% static 'assets/img/quienessomos.png' %}" alt="Quienes somos">
+        </section>
 
-    <section>
-        <h2>información Adicional</h2>
-        <img src="{% static 'assets/img/infoadicional.png' %}" alt="información adicional">
-    </section>
+        <section class="img-centrado">
+            <h2>Objetivo de la aplicación</h2>
+            <img src="{% static 'assets/img/objetivosnow.png' %}" alt="Objetivos Helppet">
+        </section>
 
-    <section>
-        <h2>Características Principales</h2>
-        <img src="{% static 'assets/img/caracteristicasnow.png' %}" alt="Características Principales De Helppet">
-    </section>
+        <section class="img-centrado">
+            <h2>información Adicional</h2>
+            <img src="{% static 'assets/img/infoadicional.png' %}" alt="información adicional">
+        </section>
 
-    <section>
-        <h2>Enlaces de descarga</h2>
-        <ul>
-            {% if device_type == 'Móvil' %}
-            <!-- Mostrar solo el enlace en móvil -->
-            <li>
-                <a href="https://github.com/GianiCausa/apk_helppet" target="_blank">Ir al GitHub de la APK</a>
-            </li>
-            {% else %}
-            <!-- Enlace para mostrar el QR -->
-            <li>
-                <button onclick="toggleQRCode()">Qr de descarga</button>
-            </li>
-            <!-- Imagen QR oculta inicialmente -->
-            <li>
-                <img id="qr-image" src="{% static 'assets/img/qr_de_apk.png' %}" alt="QR de descarga" width="150" height="150" style="display: none;">
-            </li>
-            {% endif %}
-        </ul>
-    </section>
+        <section class="img-centrado">
+            <h2>Características Principales</h2>
+            <img src="{% static 'assets/img/caracteristicasnow.png' %}" alt="Características Principales De Helppet">
+        </section>
+
+        <section class="galeria">
+            <h2>Imagenes de referencia de la aplicación</h2>
+            <div class="imagenes">
+                <img src="{% static 'assets/img/login.PNG' %}" alt="">
+                <img src="{% static 'assets/img/paginaprincipal.PNG' %}" alt="">
+                <img src="{% static 'assets/img/infodetallada.PNG' %}" alt="">
+                <img src="{% static 'assets/img/adoptar.PNG' %}" alt="">
+                <img src="{% static 'assets/img/cuenta.PNG' %}" alt="">
+                <img src="{% static 'assets/img/modificarcuenta.PNG' %}" alt="">
+                <img src="{% static 'assets/img/modificarcontra.PNG' %}" alt="">
+            </div>
+        </section>
+
+        <section>
+            <h2>Enlaces de descarga</h2>
+            <ul style="list-style-type: none;">
+                {% if device_type == 'Móvil' %}
+                <!-- Mostrar solo el enlace en móvil -->
+                <li>
+                    <a href="https://github.com/GianiCausa/apk_helppet" target="_blank">Ir al GitHub de la APK</a>
+                </li>
+                {% else %}
+                <!-- Enlace para mostrar el QR -->
+                <li>
+                    <button onclick="toggleQRCode()">Qr de descarga</button>
+                </li>
+                <!-- Imagen QR oculta inicialmente -->
+                <li>
+                    <img id="qr-image" src="{% static 'assets/img/qr_de_apk.png' %}" alt="QR de descarga" width="150" height="150" style="display: none;">
+                </li>
+                {% endif %}
+            </ul>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2024 HelpPets. Todos los derechos reservados.</p>
